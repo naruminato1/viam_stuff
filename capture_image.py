@@ -4,15 +4,12 @@ from viam.robot.client import RobotClient
 from viam.rpc.dial import Credentials
 
 async def connect():
+    # Replace with your actual API key and machine address
     opts = RobotClient.Options.with_api_key(
-        # Replace "<API-KEY>" (including brackets) with your machine's API key
-        api_key='daf7ivgrdldo7egh6dfi9o2u4gs065c8',
-        # Replace "<API-KEY-ID>" (including brackets) with your machine's
-        # API key ID
+        api_key='1b4c119c-f2ea-4040-a84c-75af25c66de5',
         api_key_id='1674f5cf-85e2-488c-bf27-6f6ecfec0086'
     )
-    return await RobotClient.at_address('mrrover-main.dpyc8pclwr.viam.cloud', opts)
-
+    return await RobotClient.at_address('my-rover.viam.cloud', opts)
 
 async def take_and_save_picture(camera_name, save_path):
     robot = await connect()
@@ -26,13 +23,15 @@ async def take_and_save_picture(camera_name, save_path):
 
     # Save the image to the specified path
     with open(save_path, 'wb') as f:
-        f.write(image)
+        f.write(image.content)  # Use `content` to get the bytes
     print(f"Picture saved to {save_path}")
 
     await robot.close()
 
 if __name__ == "__main__":
-    camera_name = "cam"  
-    save_path = "/home/rover/Pictures/captured_image.jpg"  # Path to save the image
+    camera_name = "cam"  # Replace with your camera's name in the Viam Console
+    save_path = "/home/rover/Pictures/captured_image.jpg"  # Replace with the desired save path
 
     asyncio.run(take_and_save_picture(camera_name, save_path))
+
+    
