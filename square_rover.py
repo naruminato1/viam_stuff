@@ -16,10 +16,10 @@ from viam.rpc.dial import Credentials, DialOptions
 async def connect():
     opts = RobotClient.Options.with_api_key(
         # Replace "<API-KEY>" (including brackets) with your machine's API key
-        api_key='1b4c119c-f2ea-4040-a84c-75af25c66de5',
+        api_key='fdian30wqd61cgj7u6iay1fr5qh3g2g9',
         # Replace "<API-KEY-ID>" (including brackets) with your machine's
         # API key ID
-        api_key_id='fdian30wqd61cgj7u6iay1fr5qh3g2g9'
+        api_key_id='1b4c119c-f2ea-4040-a84c-75af25c66de5'
     )
     return await RobotClient.at_address('ADDRESS FROM THE VIAM APP', opts)
 
