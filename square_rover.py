@@ -10,7 +10,8 @@ from viam.rpc.dial import Credentials, DialOptions
 
 # pip install viam-sdk
 
-
+#sudo apt update
+# sudo apt install git
 
 async def connect():
     opts = RobotClient.Options.with_api_key(
@@ -46,4 +47,3 @@ async def main():
 if __name__ == '__main__':
     asyncio.run(main())
 
-    
