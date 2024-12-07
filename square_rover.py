@@ -21,7 +21,7 @@ async def connect():
         # API key ID
         api_key_id='1674f5cf-85e2-488c-bf27-6f6ecfec0086'
     )
-    return await RobotClient.at_address('ADDRESS FROM THE VIAM APP', opts)
+    return await RobotClient.at_address('mrrover-main.dpyc8pclwr.viam.cloud', opts)
 
 
 async def moveInSquare(base):
